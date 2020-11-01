@@ -6,6 +6,10 @@ Nesse projeto nós iremos recriar o funcionamento da Netflix em que um filme pod
 
 Para tornar o carregamento do vídeo mais rápido será implementado um algoritmo que leva em consideração a conexão do usuário, sendo que em conexões com maior largura de banda são enviados vídeos com qualidade maior e em conexões piores são enviados vídeos com qualidade menor.
 
+Além disso está sendo utilizada uma arquitetura de software em que o servidor de conteúdo é separado do servidor da aplicação front-end, podendo futuramente ser utilizado inclusive um CDN para envio dos arquivos de vídeo.
+
+Essa arquitetura é a atualmente utilizada em diversos projetos, inclusive na própria Netflix, onde a mesma envia os CDN's da empresa para provedores de Internet.
+
 ## Requisitos:
 
 No decorrer das aulas são apresentados alguns programas que vamos utilizar. Abaixo segue uma listagem ensinando a baixar e instalar no Ubuntu 20.04.
@@ -29,6 +33,23 @@ cd ./jsexpert01-skeleton-ew/assets/timeline
 # * Os codecs de áudio e vídeo
 MP4Box -info 01.intro-1920x1080.mp4
 ```
+
+## Bash
+
+O script bash *script.sh* é utilizado para configurar os arquivos de vídeo no formato correto de maneira dinâmica e automatizada. 
+
+Ele basicamente pega os arquivos mp4 de uma determinada pasta, faz algumas operações no nome desse arquivo e cria novas pastas no diretório para salvar as outras versões do vídeo.
+
+Depois o computador renderiza os vídeos aplicando os codecs de áudio e vídeo com melhor aceitação pelos navegadores em 144px, 360px e 720px, salvando cada versão em uma pasta específica.
+
+Para sua correta execução é necessário ter o *ffmpeg* e o *ffprobe* instalados no ambiente de execução.
+
+## Padrão de streaming
+
+*Ainda preciso estudar um pouco mais sobre esse assunto*
+
+* DASH
+* Shaka Player
 
 ---
 Vinícius Gajo Marques Oliveira, 2020
