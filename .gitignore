@@ -1,2 +1,5 @@
+node_modules/
 gpac_public/
-jsexpert01-skeleton-ew/assets/timeline/*/
+
+aula01/jsexpert01-skeleton-ew/assets/timeline/*
+aula02/jsexpert01-skeleton-ew/assets/timeline/*/
